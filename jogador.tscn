@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuw6et5tsueqt"]
+
+[ext_resource type="Texture2D" uid="uid://c3e04vtekisrc" path="res://arts/personagens/sprite.png" id="1_q2130"]
+[ext_resource type="Texture2D" uid="uid://bl6qt8jops3s1" path="res://arts/personagens/sprite (2).png" id="2_4obgb"]
+[ext_resource type="Texture2D" uid="uid://bnelvxjw4acga" path="res://arts/personagens/sprite (3).png" id="3_j3kwt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xswob"]
+atlas = ExtResource("1_q2130")
+region = Rect2(0, 0, 96, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82vy7"]
+atlas = ExtResource("2_4obgb")
+region = Rect2(0, 0, 84, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdflp"]
+atlas = ExtResource("3_j3kwt")
+region = Rect2(0, 0, 84, 142)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t76xg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xswob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82vy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdflp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="jogador" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_t76xg")
+animation = &"idle"
+frame = 1
+frame_progress = 0.18556058
