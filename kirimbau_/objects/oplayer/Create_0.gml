@@ -1,3 +1,8 @@
+randomize();
+
+var cam = instance_create_layer(x,y,layer,obj_camera);
+cam.alvo = id;
+
 velh = 0;
 velv = 0;
 vel = 5;
